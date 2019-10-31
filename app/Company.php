@@ -1,0 +1,48 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Company extends Model
+{
+    protected $guarded = [];
+
+    public function services(){
+
+        return $this->hasMany('App\Service');
+    
+    }
+
+    public function albums(){
+
+        return $this->hasMany('App\Album');
+    
+    }
+
+
+    public function images(){
+
+        return $this->hasMany('App\Image');
+    
+    }
+
+    public function likes(){
+
+        return $this->hasMany('App\Like');
+    
+    }
+
+    public function user(){
+
+        return $this->belongsTo('App\User');
+    
+    }
+
+    public function entity(){
+
+        return $this->belongsTo('App\Entity');
+    
+    }
+    
+}
