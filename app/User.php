@@ -19,9 +19,9 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
-    public function company(){
+    public function companies(){
 
-        return $this->hasOne('App\Company');
+        return $this->hasMany('App\Company');
     
     }
 
@@ -70,6 +70,12 @@ class User extends Authenticatable
     public function images(){
 
         return $this->hasMany('App\Image');
+    
+    }
+
+    public function subscription(){
+
+        return $this->hasOne('App\Subscription');
     
     }
 

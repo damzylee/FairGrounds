@@ -44,5 +44,11 @@ class Company extends Model
         return $this->belongsTo('App\Entity');
     
     }
+
+    public function subscription(){
+
+        return $this->belongsTo('App\Subscription');
+    
+    }
     
 }
