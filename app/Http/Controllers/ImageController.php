@@ -14,7 +14,9 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $images = Image::all();
+
+        return view('image.index', compact('images'));
     }
 
     /**
@@ -24,7 +26,9 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+        $image = new Image();
+
+        return view('image.create', compact('image'));
     }
 
     /**
@@ -35,7 +39,9 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $image = Image::create($this->requestValidation());
+
+        $this->storeImage($image);
     }
 
     /**
@@ -46,7 +52,7 @@ class ImageController extends Controller
      */
     public function show(Image $image)
     {
-        //
+        return view('image.show', compact('image'));
     }
 
     /**
@@ -57,7 +63,7 @@ class ImageController extends Controller
      */
     public function edit(Image $image)
     {
-        //
+        return view('image.edit', compact('image'));
     }
 
     /**
@@ -69,7 +75,11 @@ class ImageController extends Controller
      */
     public function update(Request $request, Image $image)
     {
-        //
+        $image->update($this->requestValidation());
+
+        $this->storeImage($image);
+
+        return view('image.show', compact('image'));
     }
 
     /**
@@ -80,6 +90,22 @@ class ImageController extends Controller
      */
     public function destroy(Image $image)
     {
-        //
+        $image->delete();
+    }
+
+    protected function requestValidation()
+    {
+        return request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required | file| image | max:10000'
+        ]);
+    }
+
+    protected function storeImage($image)
+    {
+        $image->update([
+            'image' => request()->image->store('uploads', 'public')
+        ]);
     }
 }

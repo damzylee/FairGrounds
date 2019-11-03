@@ -9,7 +9,7 @@
 <body>
     <div>
         <h1>List of Albums</h1>
-        <a href="route{{'company.create'}}"></a>
+        <a href="route{{'album.create'}}"></a>
     </div>
 
         @if(count($albums) > 0)
