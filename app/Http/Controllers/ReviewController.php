@@ -14,7 +14,9 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::all();
+
+        return view('review.index', compact('reviews'));
     }
 
     /**
@@ -24,7 +26,9 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        $review = new Review();
+
+        return view('review.create', compact('review'));
     }
 
     /**
@@ -35,7 +39,7 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $review = Review::create($this->requestValidation());
     }
 
     /**

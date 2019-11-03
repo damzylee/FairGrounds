@@ -14,7 +14,9 @@ class RequestController extends Controller
      */
     public function index()
     {
-        //
+        $requests = Requests::all();
+
+        return view('request.index', compact('requests'));
     }
 
     /**
@@ -24,7 +26,9 @@ class RequestController extends Controller
      */
     public function create()
     {
-        //
+        $requests = new Requests();
+
+        return view('request.create', compact('requests'));
     }
 
     /**
@@ -35,7 +39,7 @@ class RequestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $requests = Requests::create($this->requestValidation());
     }
 
     /**
@@ -46,7 +50,7 @@ class RequestController extends Controller
      */
     public function show(Requests $requests)
     {
-        //
+        return view('request.show', 'requests');
     }
 
     /**
@@ -57,7 +61,7 @@ class RequestController extends Controller
      */
     public function edit(Requests $requests)
     {
-        //
+        return view('request.edit', 'requests');
     }
 
     /**
@@ -69,7 +73,9 @@ class RequestController extends Controller
      */
     public function update(Request $request, Requests $requests)
     {
-        //
+        $requests->update($this->requestValidation());
+
+        return view('request.show', 'requests');
     }
 
     /**
@@ -80,6 +86,15 @@ class RequestController extends Controller
      */
     public function destroy(Requests $requests)
     {
-        //
+        $requests->delete();
+    }
+
+    protected function requestValidation()
+    {
+        return request()->validate([
+            'title' => 'required | min:4',
+            'detail' => 'required | max:500',
+            'user_id' => 'required'
+        ]);
     }
 }

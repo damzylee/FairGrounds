@@ -41,10 +41,10 @@ Route::delete('/comment/{comment}', 'CommentController@destroy');
 Route::get('/request', 'RequestController@index');
 Route::get('/request/create', 'RequestController@create');
 Route::post('/request', 'RequestController@store');
-Route::get('/request/{request}', 'RequestController@show');
-Route::get('/request/{request}/edit', 'RequestController@edit');
-Route::patch('/request/{request}', 'RequestController@update');
-Route::delete('/request/{request}', 'RequestController@destroy');
+Route::get('/request/{requests}', 'RequestController@show');
+Route::get('/request/{requests}/edit', 'RequestController@edit');
+Route::patch('/request/{requests}', 'RequestController@update');
+Route::delete('/request/{requests}', 'RequestController@destroy');
 
 // review
 Route::get('/review', 'ReviewController@index');
