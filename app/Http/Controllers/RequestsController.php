@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Request;
+use App\Requests;
 use Illuminate\Http\Request;
 
 class RequestController extends Controller
@@ -44,7 +44,7 @@ class RequestController extends Controller
      * @param  \App\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(Requests $requests)
     {
         //
     }
@@ -55,7 +55,7 @@ class RequestController extends Controller
      * @param  \App\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit(Requests $requests)
     {
         //
     }
@@ -67,7 +67,7 @@ class RequestController extends Controller
      * @param  \App\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Request $request)
+    public function update(Request $request, Requests $requests)
     {
         //
     }
@@ -78,7 +78,7 @@ class RequestController extends Controller
      * @param  \App\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(Requests $requests)
     {
         //
     }

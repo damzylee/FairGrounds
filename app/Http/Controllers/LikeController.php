@@ -35,7 +35,9 @@ class LikeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $like = new Like();
+
+        $like = Like::create($this->requestValidation);
     }
 
     /**
@@ -80,6 +82,34 @@ class LikeController extends Controller
      */
     public function destroy(Like $like)
     {
-        //
+        $like->delete();
+    }
+
+    protected function requestValidation()
+    {
+        if(request()->has('user_id') && request()->has('comment_id')){
+            return request()->validate([
+                'user_id' => 'required',
+                'comment_id' => 'required'
+            ]);            
+        }
+        elseif(request()->has('user_id') && request()->has('review_id')){
+            return request()->validate([
+                'user_id' => 'required',
+                'review_id' => 'required'
+            ]);            
+        }
+        elseif(request()->has('company_id') && request()->has('comment_id')){
+            return request()->validate([
+                'company_id' => 'required',
+                'comment_id' => 'required'
+            ]);            
+        }
+        else{
+            return request()->validate([
+                'company_id' => 'required',
+                'review_id' => 'required'
+            ]);            
+        }
     }
 }
