@@ -14,7 +14,9 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $comments = Comment::all();
+
+        return view('comment.index', compact('comments'));
     }
 
     /**
@@ -24,7 +26,9 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+        $comment = new Comment();
+
+        return view('comment.create', compact('comment'));
     }
 
     /**
@@ -35,7 +39,9 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment = Comment::create($request->validate([
+                'comment' => 'required'
+        ]));
     }
 
     /**
@@ -46,7 +52,7 @@ class CommentController extends Controller
      */
     public function show(Comment $comment)
     {
-        //
+        return view('comment.show', compact('comment'));
     }
 
     /**
@@ -57,7 +63,7 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-        //
+        return view('comment.edit', compact('comment'));
     }
 
     /**
@@ -69,7 +75,11 @@ class CommentController extends Controller
      */
     public function update(Request $request, Comment $comment)
     {
-        //
+        $comment->update($request->validate([
+            'comment' => 'required'
+        ]));
+
+        return view('comment.show', compact('comment'));
     }
 
     /**
@@ -80,6 +90,6 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
     }
 }

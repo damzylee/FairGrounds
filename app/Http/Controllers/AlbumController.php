@@ -14,7 +14,9 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        //
+        $albums = Album::latest()->get();
+
+        return view('album.index', compact('albums'));
     }
 
     /**
@@ -24,7 +26,9 @@ class AlbumController extends Controller
      */
     public function create()
     {
-        //
+        $album = new Album();
+
+        return view('album.create', compact('album'));
     }
 
     /**
@@ -35,7 +39,9 @@ class AlbumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $album = Album::create($this->requestValidation());
+
+        $this->storeImage($album);
     }
 
     /**
@@ -46,7 +52,7 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
-        //
+        return view('album.show', compact('album'));
     }
 
     /**
@@ -57,7 +63,7 @@ class AlbumController extends Controller
      */
     public function edit(Album $album)
     {
-        //
+        return view('album.edit', compact('album'));
     }
 
     /**
@@ -69,7 +75,11 @@ class AlbumController extends Controller
      */
     public function update(Request $request, Album $album)
     {
-        //
+        $album->update($this->requestValidation());
+
+        $this->storeImage($album);
+
+        return view('album.show', compact('album'));
     }
 
     /**
@@ -80,6 +90,30 @@ class AlbumController extends Controller
      */
     public function destroy(Album $album)
     {
-        //
+        $album->delete();
+    }
+
+    protected function requestValidation()
+    {
+        return tap(request()->validate([
+            'name' => 'required | min:2',
+            'description' => 'required | min:2',
+        ]), function(){
+            if(request()->hasFile('image')){
+                request()->validate([
+                    'image' => 'file | image | max:10000'
+                ]);
+            }
+        });
+    }
+
+    protected function storeImage($album)
+    {
+        if(request()->has('image')){
+
+            $album->update([
+                'image' => request()->image->store('uploads', 'public')
+            ]);
+        }
     }
 }

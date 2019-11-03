@@ -17,7 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->unsignedInteger('subscription_id');
+            $table->unsignedInteger('subscription_id')->nullable();
             $table->string('number')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->string('type');
