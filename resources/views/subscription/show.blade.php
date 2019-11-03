@@ -9,10 +9,10 @@
 <body>
     <div class="row">
         <div class="col-12">
-            <h1>Details of {{$company->name}}</h1>
-            <p><a href="company/{{$company->id}}/edit">Edit</a></p>
+            <h1>Details of {{$subscription->name}}</h1>
+            <p><a href="subscription/{{$subscription->id}}/edit">Edit</a></p>
 
-            <form action="company/{{$company->id}}" method="post">
+            <form action="subscription/{{$subscription->id}}" method="post">
                 @method('DELETE')
                 @csrf
                 <button class="btn btn-danger">Delete</button>
@@ -21,24 +21,8 @@
     </div>
 
     <div>
-        <p><strong>Name:</strong>  {{$company->name}}</p>  
-        <p><strong>Email:</strong>  {{$company->email}}</p>  
-        <p><strong>Number:</strong>  {{$company->number}}</p>  
-        <p><strong>Type:</strong>  {{$company->type}}</p> 
-        <p><strong>Country:</strong>  {{$company->country}}</p> 
-        <p><strong>State:</strong>  {{$company->state}}</p> 
-        <p><strong>Address:</strong>  {{$company->address}}</p> 
-        <p><strong>Profile:</strong>  {{$company->profile}}</p> 
-        <p><strong>Year of Establishment:</strong>  {{$company->YOE}}</p> 
-        <p><strong>Profile:</strong>  {{$company->profile}}</p> 
+        <p><strong>Subscription type:</strong>  {{$subscription->type}}</p>  
+        <p><strong>Amount:</strong>  {{$subscription->amount}}</p>  
     </div>
-
-    @if($company->image)
-        <div class="row">
-            <div class="col-12">
-                <img src="asset{{'storage/' . $company->image}}" alt="{{$company->name}}" class="img-thumbnail">
-            </div>
-        </div>
-    @endif
 </body>
 </html>

@@ -8,10 +8,10 @@
 </head>
 <body>
     
-    <form action="route{{'company.store'}}" method="POST" class="pb-5" enctype="multipart/form-data">
-        @include('company.form')
+    <form action="route{{'subscription.store'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+        @include('subscription.form')
 
-        <button type="submit" class="btn btn-primary">Register company</button>
+        <button type="submit" class="btn btn-primary">Register subscription</button>
     </form>
 </body>
 </html>

@@ -14,7 +14,9 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        //
+        $subscriptions = Subscription::all();
+
+        return view('subscription.index', compact('subscriptions'));
     }
 
     /**
@@ -24,7 +26,9 @@ class SubscriptionController extends Controller
      */
     public function create()
     {
-        //
+        $subscription = new Subscription();
+
+        return view('subcription.create', compact('subscription'));
     }
 
     /**
@@ -35,7 +39,7 @@ class SubscriptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $subscription = Subscription::create($this->requestValidation());
     }
 
     /**
@@ -46,7 +50,7 @@ class SubscriptionController extends Controller
      */
     public function show(Subscription $subscription)
     {
-        //
+        return view('subscription.show', compact('subscription'));
     }
 
     /**
@@ -57,7 +61,7 @@ class SubscriptionController extends Controller
      */
     public function edit(Subscription $subscription)
     {
-        //
+        return view('subscription.edit', compact('subscription'));
     }
 
     /**
@@ -69,7 +73,9 @@ class SubscriptionController extends Controller
      */
     public function update(Request $request, Subscription $subscription)
     {
-        //
+        $subscription->update($this->requestValidation());
+
+        return view('subscription.show', compact('subscription'));
     }
 
     /**
@@ -80,6 +86,14 @@ class SubscriptionController extends Controller
      */
     public function destroy(Subscription $subscription)
     {
-        //
+        $subscription->delete();
+    }
+
+    protected function requestValidation()
+    {
+        return request()->validate([
+            'type' => 'required',
+            'amount' => 'required|numeric'
+        ]);
     }
 }

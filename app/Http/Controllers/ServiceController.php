@@ -39,7 +39,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $service = Service::create($this-)
+        $service = Service::create($this-requestValidation());
     }
 
     /**
@@ -50,7 +50,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return view('service.show', compact('service'));
     }
 
     /**
@@ -61,7 +61,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view('service.edit', compact('service'));
     }
 
     /**
@@ -73,7 +73,9 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $service->update($this->requestValidation());
+
+        return view('service.show', compact('service'));
     }
 
     /**
@@ -84,6 +86,15 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete();
+    }
+
+    protected function requestValidation()
+    {
+        return request()->validate([
+            'name' => 'required',
+            'description' => 'required|max:255',
+            'company_id' => 'required'
+        ]);
     }
 }

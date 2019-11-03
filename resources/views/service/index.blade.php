@@ -8,37 +8,29 @@
 </head>
 <body>
     <div>
-        <h1>List of Companies</h1>
-        <a href="route{{'company.create'}}"></a>
+        <h1>List of services</h1>
+        <a href="route{{'service.create'}}"></a>
     </div>
 
-        @if(count($companies) > 0)
+        @if(count($services) > 0)
         <?php
-            $companycount = count($companies);
+            $servicecount = count($services);
             $i = 1;
         ?>
 
-        <div id="companies">
+        <div id="services">
             <div class="row text-center">
-                @foreach($companies as $company)
-                @if($i == $companycount)
+                @foreach($services as $service)
+                @if($i == $servicecount)
                     <div class="col-4">
-                        <a href="company/{{$company->id}}">
-                            <img src="asset{{'storage/' . $company->image}}" alt="{{$company->name}}" class="img-thumbnail">
-                        </a>
-                        <br>
-                        <a href="company/{{$company->id}}">
-                            <h3>{{$company->name}}</h3> 
+                        <a href="service/{{$service->id}}">
+                            <h3>{{$service->name}}</h3> 
                         </a>
                     </div>
                 @else
                     <div class="col-4">
-                        <a href="company/{{$company->id}}">
-                            <img src="asset{{'storage/' . $company->image}}" alt="{{$company->name}}" class="img-thumbnail">
-                        </a>
-                        <br>
-                        <a href="company/{{$company->id}}">
-                            <h3>{{$company->name}}</h3> 
+                        <a href="service/{{$service->id}}">
+                            <h3>{{$service->name}}</h3> 
                         </a>
                     </div>
                 @endif
@@ -62,7 +54,7 @@
             </div>
         </div>
         @else
-        <p>No company to display</p>
+        <p>No service to display</p>
         @endif
     
 </body>

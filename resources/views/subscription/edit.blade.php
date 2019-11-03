@@ -8,9 +8,9 @@
 </head>
 <body>
     
-    <form action="route{{'company.update'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="route{{'subscription.update'}}" method="POST" class="pb-5" enctype="multipart/form-data">
     @method('PATCH')
-        @include('company.form')
+        @include('subscription.form')
 
         <button type="submit" class="btn btn-primary">Update</button>
     </form>

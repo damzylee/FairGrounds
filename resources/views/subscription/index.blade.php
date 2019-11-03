@@ -8,37 +8,29 @@
 </head>
 <body>
     <div>
-        <h1>List of Companies</h1>
-        <a href="route{{'company.create'}}"></a>
+        <h1>List of subscriptions</h1>
+        <a href="route{{'subscription.create'}}"></a>
     </div>
 
-        @if(count($companies) > 0)
+        @if(count($subscriptions) > 0)
         <?php
-            $companycount = count($companies);
+            $subscriptioncount = count($subscriptions);
             $i = 1;
         ?>
 
-        <div id="companies">
+        <div id="subscriptions">
             <div class="row text-center">
-                @foreach($companies as $company)
-                @if($i == $companycount)
+                @foreach($subscriptions as $subscription)
+                @if($i == $subscriptioncount)
                     <div class="col-4">
-                        <a href="company/{{$company->id}}">
-                            <img src="asset{{'storage/' . $company->image}}" alt="{{$company->name}}" class="img-thumbnail">
-                        </a>
-                        <br>
-                        <a href="company/{{$company->id}}">
-                            <h3>{{$company->name}}</h3> 
+                        <a href="subscription/{{$subscription->id}}">
+                            <h3>{{$subscription->type}}</h3> 
                         </a>
                     </div>
                 @else
                     <div class="col-4">
-                        <a href="company/{{$company->id}}">
-                            <img src="asset{{'storage/' . $company->image}}" alt="{{$company->name}}" class="img-thumbnail">
-                        </a>
-                        <br>
-                        <a href="company/{{$company->id}}">
-                            <h3>{{$company->name}}</h3> 
+                        <a href="subscription/{{$subscription->id}}">
+                            <h3>{{$subscription->type}}</h3> 
                         </a>
                     </div>
                 @endif
@@ -62,7 +54,7 @@
             </div>
         </div>
         @else
-        <p>No company to display</p>
+        <p>No subscription to display</p>
         @endif
     
 </body>
