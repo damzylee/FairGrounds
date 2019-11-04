@@ -9,7 +9,7 @@
 <body>
     <div>
         <h1>List of Images</h1>
-        <a href="route{{'image.create'}}"></a>
+        <a href="/image/create">create</a>
     </div>
 
         @if(count($images) > 0)
@@ -24,19 +24,11 @@
                 @if($i == $imagecount)
                     <div class="col-4">
                         <a href="image/{{$image->id}}">
-                            <img src="asset{{'storage/' . $image->image}}" alt="{{$image->name}}" class="img-thumbnail">
-                        </a>
-                        <br>
-                        <a href="image/{{$image->id}}">
                             <h3>{{$image->name}}</h3> 
                         </a>
                     </div>
                 @else
                     <div class="col-4">
-                        <a href="image/{{$image->id}}">
-                            <img src="asset{{'storage/' . $image->image}}" alt="{{$image->name}}" class="img-thumbnail">
-                        </a>
-                        <br>
                         <a href="image/{{$image->id}}">
                             <h3>{{$image->name}}</h3> 
                         </a>

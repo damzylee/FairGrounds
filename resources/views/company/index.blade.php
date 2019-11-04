@@ -9,7 +9,7 @@
 <body>
     <div>
         <h1>List of Companies</h1>
-        <a href="route{{'company.create'}}"></a>
+        <a href="/company/create">create</a>
     </div>
 
         @if(count($companies) > 0)

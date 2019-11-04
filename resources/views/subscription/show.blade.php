@@ -10,9 +10,9 @@
     <div class="row">
         <div class="col-12">
             <h1>Details of {{$subscription->name}}</h1>
-            <p><a href="subscription/{{$subscription->id}}/edit">Edit</a></p>
+            <p><a href="{{$subscription->id}}/edit">Edit</a></p>
 
-            <form action="subscription/{{$subscription->id}}" method="post">
+            <form action="{{$subscription->id}}" method="post">
                 @method('DELETE')
                 @csrf
                 <button class="btn btn-danger">Delete</button>

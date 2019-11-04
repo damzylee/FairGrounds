@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'image.store'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/image" method="POST" class="pb-5" enctype="multipart/form-data">
         @include('image.form')
 
         <button type="submit" class="btn btn-primary">Upload</button>

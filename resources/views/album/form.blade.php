@@ -2,13 +2,13 @@
         @csrf
             <div class="form-group">
                     <label for="name">Name:</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" value="{{old('name') ?? $album->name}}" class="form-control">
                 <div>{{$errors->first('name')}}</div>
             </div>
 
             <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea name="description" id="description" class="form-control" cols="60" rows="10">A brief discription of the album...</textarea>
+                <label for="description">Simple description:</label>
+                <textarea name="description" id="description" placeholder="{{old('description') ?? $album->description}}"class="form-control" cols="60" rows="10"></textarea>
                 <div>{{$errors->first('description')}}</div>
             </div>
 

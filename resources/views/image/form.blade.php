@@ -2,13 +2,13 @@
         @csrf
             <div class="form-group">
                     <label for="name">Name your image:</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" value="{{old('name') ?? $image->name}}" class="form-control">
                 <div>{{$errors->first('name')}}</div>
             </div>
 
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea name="description" id="description" class="form-control" cols="60" rows="10">A brief discription of the image...</textarea>
+                <textarea name="description" id="description" value="{{old('description') ?? $image->description}}" class="form-control" cols="60" rows="10">A brief discription of the image...</textarea>
                 <div>{{$errors->first('description')}}</div>
             </div>
 

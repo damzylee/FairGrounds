@@ -9,7 +9,7 @@
 <body>
     <div>
         <h1>List of subscriptions</h1>
-        <a href="route{{'subscription.create'}}"></a>
+        <a href="/subscription/create"><button class="btn btn-primary">create</button></a>
     </div>
 
         @if(count($subscriptions) > 0)

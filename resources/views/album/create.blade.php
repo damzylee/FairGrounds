@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'album.store'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/album" method="POST" class="pb-5" enctype="multipart/form-data">
         @include('album.form')
 
         <button type="submit" class="btn btn-primary">Create album</button>

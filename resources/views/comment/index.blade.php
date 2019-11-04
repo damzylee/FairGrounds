@@ -9,7 +9,7 @@
 <body>
     <div>
         <h1>List of Comments</h1>
-        <a href="route{{'comment.create'}}"></a>
+        <a href="/comment/create">create</a>
     </div>
 
         @if(count($comments) > 0)

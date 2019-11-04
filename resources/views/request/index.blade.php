@@ -9,7 +9,7 @@
 <body>
     <div>
         <h1>List of requests</h1>
-        <a href="route{{'request.create'}}"></a>
+        <a href="/request/create">create</a>
     </div>
 
         @if(count($makeRequests) > 0)

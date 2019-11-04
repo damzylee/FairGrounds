@@ -10,9 +10,9 @@
     <div class="row">
         <div class="col-12">
             <h1>Details of {{$image->name}}</h1>
-            <p><a href="image/{{$image->id}}/edit">Edit</a></p>
+            <p><a href="{{$image->id}}/edit">Edit</a></p>
 
-            <form action="image/{{$image->id}}" method="post">
+            <form action="{{$image->id}}" method="post">
                 @method('DELETE')
                 @csrf
                 <button class="btn btn-danger">Delete</button>

@@ -9,7 +9,7 @@
 <body>
     <div>
         <h1>List of services</h1>
-        <a href="route{{'service.create'}}"></a>
+        <a href="/service/create">create</a>
     </div>
 
         @if(count($services) > 0)

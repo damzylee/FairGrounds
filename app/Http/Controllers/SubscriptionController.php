@@ -28,7 +28,7 @@ class SubscriptionController extends Controller
     {
         $subscription = new Subscription();
 
-        return view('subcription.create', compact('subscription'));
+        return view('subscription.create', compact('subscription'));
     }
 
     /**

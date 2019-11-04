@@ -9,7 +9,7 @@
 <body>
     <div>
         <h1>List of reviews</h1>
-        <a href="route{{'review.create'}}"></a>
+        <a href="/review/create">create</a>
     </div>
 
         @if(count($reviews) > 0)

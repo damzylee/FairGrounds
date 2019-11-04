@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'subscription.store'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/subscription" method="POST" class="pb-5" enctype="multipart/form-data">
         @include('subscription.form')
 
         <button type="submit" class="btn btn-primary">Register subscription</button>

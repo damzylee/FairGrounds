@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'album.update'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/album/{{$album->id}}" method="POST" class="pb-5" enctype="multipart/form-data">
     @method('PATCH')
         @include('album.form')
 

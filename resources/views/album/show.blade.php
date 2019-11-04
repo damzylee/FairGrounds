@@ -10,9 +10,9 @@
     <div class="row">
         <div class="col-12">
             <h1>Details of {{$album->name}}</h1>
-            <p><a href="album/{{$album->id}}/edit">Edit</a></p>
+            <p><a href="{{$album->id}}/edit">Edit</a></p>
 
-            <form action="album/{{$album->id}}" method="post">
+            <form action="{{$album->id}}" method="post">
                 @method('DELETE')
                 @csrf
                 <button class="btn btn-danger">Delete</button>
