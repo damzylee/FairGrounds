@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'review.store'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/review" method="POST" class="pb-5" enctype="multipart/form-data">
         @include('review.form')
 
         <button type="submit" class="btn btn-primary">upload review</button>

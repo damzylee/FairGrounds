@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Requests;
+use App\MakeRequest;
 use Illuminate\Http\Request;
 
-class RequestController extends Controller
+class MakeRequestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class RequestController extends Controller
      */
     public function index()
     {
-        $requests = Requests::all();
+        $makeRequests = MakeRequest::all();
 
-        return view('request.index', compact('requests'));
+        return view('request.index', compact('makeRequests'));
     }
 
     /**
@@ -26,9 +26,9 @@ class RequestController extends Controller
      */
     public function create()
     {
-        $requests = new Requests();
+        $makeRequest = new MakeRequest();
 
-        return view('request.create', compact('requests'));
+        return view('request.create', compact('makeRequest'));
     }
 
     /**
@@ -39,54 +39,58 @@ class RequestController extends Controller
      */
     public function store(Request $request)
     {
-        $requests = Requests::create($this->requestValidation());
+        $makeRequest = MakeRequest::create($this->requestValidation());
+
+        $makeRequests = new MakeRequest();
+
+        return view('request.create', compact('makeRequests'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Request  $request
+     * @param  \App\MakeRequest  $makeRequest
      * @return \Illuminate\Http\Response
      */
-    public function show(Requests $requests)
+    public function show(MakeRequest $makeRequest)
     {
-        return view('request.show', 'requests');
+        return view('request.show', 'makeRequest');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Request  $request
+     * @param  \App\MakeRequest  $makeRequest
      * @return \Illuminate\Http\Response
      */
-    public function edit(Requests $requests)
+    public function edit(MakeRequest $makeRequest)
     {
-        return view('request.edit', 'requests');
+        return view('request.edit', 'makeRequest');
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Request  $request
+     * @param  \App\MakeRequest  $makeRequest
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Requests $requests)
+    public function update(Request $request, MakeRequest $makeRequest)
     {
-        $requests->update($this->requestValidation());
+        $makeRequest->update($this->requestValidation());
 
-        return view('request.show', 'requests');
+        return view('request.show', 'makeRequest');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Request  $request
+     * @param  \App\MakeRequest  $makeRequest
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Requests $requests)
+    public function destroy(MakeRequest $makeRequest)
     {
-        $requests->delete();
+        $makeRequest->delete();
     }
 
     protected function requestValidation()

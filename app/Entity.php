@@ -34,9 +34,9 @@ class Entity extends Model
         return $this->hasMany('App\Like');
     
     }
-    public function requests(){
+    public function makeRequests(){
 
-        return $this->hasMany('App\Request');
+        return $this->hasMany('App\MakeRequest');
     
     }
     public function reviews(){

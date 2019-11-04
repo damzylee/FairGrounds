@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'service.store'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/service" method="POST" class="pb-5" enctype="multipart/form-data">
         @include('service.form')
 
         <button type="submit" class="btn btn-primary">Upload service</button>

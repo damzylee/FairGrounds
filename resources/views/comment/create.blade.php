@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'comment.store'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/comment" method="POST" class="pb-5" enctype="multipart/form-data">
         @include('comment.form')
 
         <button type="submit" class="btn btn-primary">Upload comment</button>

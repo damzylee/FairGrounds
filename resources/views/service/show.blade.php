@@ -10,9 +10,9 @@
     <div class="row">
         <div class="col-12">
             <h1>Details of {{$service->name}}</h1>
-            <p><a href="service/{{$service->id}}/edit">Edit</a></p>
+            <p><a href="{{$service->id}}/edit">Edit</a></p>
 
-            <form action="service/{{$service->id}}" method="post">
+            <form action="{{$service->id}}" method="post">
                 @method('DELETE')
                 @csrf
                 <button class="btn btn-danger">Delete</button>

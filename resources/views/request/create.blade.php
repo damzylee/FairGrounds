@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'request.store'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/request" method="POST" class="pb-5" enctype="multipart/form-data">
         @include('request.form')
 
         <button type="submit" class="btn btn-primary">Register request</button>

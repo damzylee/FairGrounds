@@ -26,9 +26,9 @@ class Comment extends Model
     
     }
 
-    public function request(){
+    public function makeRequest(){
 
-        return $this->belongsTo('App\Request');
+        return $this->belongsTo('App\MakeRequest');
     
     }
 

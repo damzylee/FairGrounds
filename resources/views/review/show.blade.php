@@ -10,9 +10,9 @@
     <div class="row">
         <div class="col-12">
             <h1>Details of review</h1>
-            <p><a href="review/{{$review->id}}/edit">Edit</a></p>
+            <p><a href="{{$review->id}}/edit">Edit</a></p>
 
-            <form action="review/{{$review->id}}" method="post">
+            <form action="{{$review->id}}" method="post">
                 @method('DELETE')
                 @csrf
                 <button class="btn btn-danger">Delete</button>

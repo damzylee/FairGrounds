@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'review.update'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/review/{{$review->id}}" method="POST" class="pb-5" enctype="multipart/form-data">
     @method('PATCH')
         @include('review.form')
 

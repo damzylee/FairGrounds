@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->string('comment');
             $table->unsignedInteger('user_id')->nullable();
             $table->unsignedInteger('review_id')->nullable();
+            $table->unsignedInteger('make_request_id')->nullable();
             $table->unsignedInteger('company_id')->nullable();
             $table->unsignedInteger('entity_id')->nullable();
             $table->unsignedInteger('entity_type_id')->nullable();

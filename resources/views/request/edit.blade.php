@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'request.update'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/request/{{$makeRequest->id}}" method="POST" class="pb-5" enctype="multipart/form-data">
     @method('PATCH')
         @include('request.form')
 

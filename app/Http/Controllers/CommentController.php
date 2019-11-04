@@ -42,6 +42,10 @@ class CommentController extends Controller
         $comment = Comment::create($request->validate([
                 'comment' => 'required'
         ]));
+
+        $comments = Comment::all();
+
+        return view('comment.index', compact('comments'));
     }
 
     /**

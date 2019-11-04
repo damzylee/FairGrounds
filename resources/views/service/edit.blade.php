@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'service.update'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/service/{{$service->id}}" method="POST" class="pb-5" enctype="multipart/form-data">
     @method('PATCH')
         @include('service.form')
 

@@ -12,31 +12,31 @@
         <a href="route{{'request.create'}}"></a>
     </div>
 
-        @if(count($requests) > 0)
+        @if(count($makeRequests) > 0)
         <?php
-            $requestcount = count($requests);
+            $requestcount = count($makeRequests);
             $i = 1;
         ?>
 
-        <div id="requests">
+        <div id="makeRequests">
             <div class="row text-center">
-                @foreach($requests as $request)
+                @foreach($makeRequests as $makeRequest)
                 @if($i == $requestcount)
                     <div class="col-4">
-                        <a href="request/{{$request->id}}">
-                            <h3>{{$request->title}}</h3> 
+                        <a href="request/{{$makeRequest->id}}">
+                            <h3>{{$makeRequest->title}}</h3> 
                         </a>
                         <br>
-                        <p>{{$request->detail}}</p>
+                        <p>{{$makeRequest->detail}}</p>
                         
                     </div>
                 @else
                     <div class="col-4">
-                        <a href="request/{{$request->id}}">
-                            <h3>{{$request->title}}</h3> 
+                        <a href="request/{{$makeRequest->id}}">
+                            <h3>{{$makeRequest->title}}</h3> 
                         </a>
                         <br>
-                        <p>{{$request->detail}}</p>
+                        <p>{{$makeRequest->detail}}</p>
                         
                     </div>
                 @endif

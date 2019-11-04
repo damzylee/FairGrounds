@@ -9,10 +9,10 @@
 <body>
     <div class="row">
         <div class="col-12">
-            <h1>Details of {{$requests->title}}</h1>
-            <p><a href="request/{{$requests->id}}/edit">Edit</a></p>
+            <h1>Details of {{$makeRequest->title}}</h1>
+            <p><a href="{{$makeRequest->id}}/edit">Edit</a></p>
 
-            <form action="request/{{$requests->id}}" method="post">
+            <form action="{{$makeRequest->id}}" method="post">
                 @method('DELETE')
                 @csrf
                 <button class="btn btn-danger">Delete</button>
@@ -21,8 +21,8 @@
     </div>
 
     <div>
-        <p><strong>Title:</strong>  {{$request->title}}</p>  
-        <p><strong>Detail:</strong>  {{$request->detail}}</p>  
+        <p><strong>Title:</strong>  {{$makeRequest->title}}</p>  
+        <p><strong>Detail:</strong>  {{$makeRequest->detail}}</p>  
     </div>
 </body>
 </html>

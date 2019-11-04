@@ -20,9 +20,9 @@ class Service extends Model
     
     }
 
-    public function requests(){
+    public function makeRequests(){
 
-        return $this->hasMany('App\Request');
+        return $this->hasMany('App\MakeRequest');
         
     }
 
