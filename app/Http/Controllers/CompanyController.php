@@ -43,6 +43,10 @@ class CompanyController extends Controller
 
         $this->storeImage($company);
 
+        $companies = Company::latest()->get();
+
+        return view('company.index', compact('companies'));
+
     }
 
     /**

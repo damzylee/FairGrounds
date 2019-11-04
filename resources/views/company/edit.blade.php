@@ -8,8 +8,8 @@
 </head>
 <body>
     
-    <form action="route{{'company.update'}}" method="POST" class="pb-5" enctype="multipart/form-data">
-    @method('PATCH')
+    <form action="/company/{{$company->id}}" method="POST" class="pb-5" enctype="multipart/form-data">
+        @method('PATCH')
         @include('company.form')
 
         <button type="submit" class="btn btn-primary">Update</button>

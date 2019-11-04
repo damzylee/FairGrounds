@@ -20,4 +20,17 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                
+            </div>
+        </div>
+        <div class="col-8">
+
+        </div>
+    </div>
+</div>
 @endsection
