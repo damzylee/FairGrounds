@@ -27,6 +27,7 @@ class CreateCompaniesTable extends Migration
             $table->string('image')->nullable();
             $table->string('profile')->nullable();
             $table->date('YOE')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

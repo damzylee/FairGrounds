@@ -19,6 +19,7 @@ class CreateMakeRequestsTable extends Migration
             $table->string('detail');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('service_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

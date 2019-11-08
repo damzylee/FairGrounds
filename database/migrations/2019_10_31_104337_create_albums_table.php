@@ -20,6 +20,7 @@ class CreateAlbumsTable extends Migration
             $table->string('image')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->unsignedInteger('company_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

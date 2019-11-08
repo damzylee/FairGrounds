@@ -22,6 +22,7 @@ class CreateCommentsTable extends Migration
             $table->unsignedInteger('company_id')->nullable();
             $table->unsignedInteger('entity_id')->nullable();
             $table->unsignedInteger('entity_type_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

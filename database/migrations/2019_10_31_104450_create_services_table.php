@@ -19,6 +19,7 @@ class CreateServicesTable extends Migration
             $table->string('description');
             $table->unsignedInteger('company_id');
             $table->unsignedInteger('user_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

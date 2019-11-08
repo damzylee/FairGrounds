@@ -24,10 +24,12 @@ class CreateUsersTable extends Migration
             $table->string('country')->nullable();
             $table->string('state')->nullable();
             $table->string('town')->nullable();
+            $table->boolean('is_admin')->nullable();
             $table->string('image')->nullable();
             $table->string('BIOS')->nullable();
             $table->date('DOB')->nullable();
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

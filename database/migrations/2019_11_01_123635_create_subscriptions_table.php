@@ -17,6 +17,7 @@ class CreateSubscriptionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('type');
             $table->float('amount');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

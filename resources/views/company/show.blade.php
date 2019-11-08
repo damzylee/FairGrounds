@@ -30,13 +30,12 @@
         <p><strong>Address:</strong>  {{$company->address}}</p> 
         <p><strong>Profile:</strong>  {{$company->profile}}</p> 
         <p><strong>Year of Establishment:</strong>  {{$company->YOE}}</p> 
-        <p><strong>Profile:</strong>  {{$company->profile}}</p> 
     </div>
 
     @if($company->image)
         <div class="row">
             <div class="col-12">
-                <img src="asset{{'storage/' . $company->image}}" alt="{{$company->name}}" class="img-thumbnail">
+                <img src="{{'../storage/' . $company->image}}" alt="{{$company->name}}" class="img-thumbnail">
             </div>
         </div>
     @endif

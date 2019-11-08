@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="route{{'comment.update'}}" method="POST" class="pb-5" enctype="multipart/form-data">
+    <form action="/comment/{{$comment->id}}" method="POST" class="pb-5" enctype="multipart/form-data">
         @method('PATCH')
         @include('comment.form')
 

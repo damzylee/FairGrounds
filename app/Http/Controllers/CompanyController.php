@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Resources\CompanyApiResource;
 
 class CompanyController extends Controller
 {
@@ -14,9 +16,12 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::latest()->get();
+        // $companies = Company::latest()->get();
 
-        return view('company.index', compact('companies'));
+        // return view('company.index', compact('companies'));
+        return response()->json([
+            'Error' => 'Couldnt create'
+        ]);
     }
 
     /**
